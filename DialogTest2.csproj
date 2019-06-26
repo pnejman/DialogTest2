@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DialogLine.cs" />
+    <Compile Include="DialogProcessor.cs" />
     <Compile Include="XMLProcessor.cs" />
     <Compile Include="DialogEngine.cs" />
     <Compile Include="Program.cs" />

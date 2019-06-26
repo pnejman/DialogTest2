@@ -8,11 +8,10 @@ namespace DialogTest2
 {
     class Program
     {
-        public DialogEngine my_dialog = new DialogEngine();
-
         static void Main(string[] args)
         {
-            my_dialog.PlayScene("tavern");
+            DialogEngine myDialogEngine = new DialogEngine("didi.xml"); //new instance of DialogEngine class with custom Constructor
+            myDialogEngine.PlayScene("tavern1"); //play given scene
         }
     }
 }

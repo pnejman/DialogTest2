@@ -9,12 +9,20 @@ namespace DialogTest2
 {
     public class DialogEngine
     {
-        public XMLProcessor xmlProcessor = new XMLProcessor();
-        public XDocument dialogFile = XDocument.Load("didi.xml");
+        private string dialogPath; //my private class-level fields
+        private XDocument dialogFile;
 
-        public void PlayScene(string sceneSelector)
+        public DialogEngine(string dialogPath) //custom public Contructor for this class, requiring one string with file path
         {
-            xmlProcessor.LoadSceneFromXML(sceneSelector);
+            XDocument dialogFile = XDocument.Load(dialogPath); //open XML file
+            this.dialogPath = dialogPath; //save these values to class fields
+            this.dialogFile = dialogFile;
+        }
+
+        public void PlayScene(string scene)
+        {
+            XMLProcessor xmlProcessor = new XMLProcessor(this.dialogFile, scene); //new instance of XMLProcessor class with custom Constructor 
+            DialogProcessor dialogProcessor = new DialogProcessor(xmlProcessor.processedSceneLines); //new instance of DialogProcessor class with custom Constructor
         }
     }
 }
