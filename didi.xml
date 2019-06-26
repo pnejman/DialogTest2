@@ -1,0 +1,14 @@
+<dialogs>
+<tavern1>
+<line name="Bartender" mood="neutral">Good day, how can I serve you?</line>
+<line name="Player" mood="neutral">I'm fine. Heard any rumors?</line>
+<line name="Bartender" mood="neutral">Nothing new. Sorry.</line>
+<line name="Bartender" mood="neutral">But tell you what. If I find somethin' new, I'll let you know.</line>
+<line name="Player" mood="dissapointed">I see. Bye then.</line>
+</tavern1>
+<citygate1>
+<line name="Town Guard" mood="bored">Yeah? What do ya want?</line>
+<line name="Player" mood="neutral">Hey. Have you heard any rumors?</line>
+<line name="Town Guard" mood="annoyed">Leave me alone. Can't ya see I'm busy?</line>
+</citygate1>
+</dialogs>
