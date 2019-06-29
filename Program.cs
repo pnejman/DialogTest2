@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DialogTest2
 {
@@ -10,7 +11,9 @@ namespace DialogTest2
     {
         static void Main(string[] args)
         {
-            DialogEngine myDialogEngine = new DialogEngine("didi.xml"); //new instance of DialogEngine class with custom Constructor
+            XDocument dialogFile = XDocument.Load("didi.xml"); //open XML file
+
+            DialogEngine myDialogEngine = new DialogEngine( new XMLProcessor(dialogFile), new DialogProcessor()); //new instance of DialogEngine class with custom Constructor
             myDialogEngine.PlayScene("tavern1"); //play given scene
         }
     }

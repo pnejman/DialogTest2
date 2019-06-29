@@ -76,10 +76,9 @@ namespace DialogTest2
             Thread.Sleep(100);
         }
 
-        public DialogProcessor(List<DialogLine> processedSceneLines) //constructor with single argument
+        public void Work(List<DialogLine> processedSceneLines)
         {
-            this.processedSceneLines = processedSceneLines; //store these as class variable
-
+            this.processedSceneLines = processedSceneLines;
             for (int currentLine = 0; currentLine < processedSceneLines.Count; currentLine++) //all those gizmos are to check if there are two lines of the same speaker one by one. If so - no fade in/fade out animations should be played
             {
                 if (currentLine == 0)
@@ -96,9 +95,9 @@ namespace DialogTest2
 
                 this.FancyWriter($"\t\"{ processedSceneLines[currentLine].spokenLine}\"\r\n", currentLine); //call smooth writing
 
-                if (currentLine < processedSceneLines.Count-1)
+                if (currentLine < processedSceneLines.Count - 1)
                 {
-                    if (processedSceneLines[currentLine].speakerName != processedSceneLines[currentLine+1].speakerName)
+                    if (processedSceneLines[currentLine].speakerName != processedSceneLines[currentLine + 1].speakerName)
                     {
                         AvatarFadeOut(processedSceneLines, currentLine);
                     }
@@ -109,5 +108,7 @@ namespace DialogTest2
                 }
             }
         }
+
+       
     }
 }
